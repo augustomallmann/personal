@@ -8,12 +8,29 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Link from 'next/link';
+import { makeStyles } from '@material-ui/core/styles';
 
+
+const useStyles = makeStyles((theme) => ({
+  portfolioContent: {
+    padding: theme.spacing(6, 0, 6),
+  },
+  cardTitle:{
+    fontFamily: 'Open Sans',
+    textTransform: 'uppercase',
+    fontSize: '1.25rem'
+  },
+
+}));
 export default function Portfolio({ portfolios }) {
+
+  const classes = useStyles();
+
+
   return (
     <>
       {console.log(portfolios)}
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className={classes.portfolioContent}>
         <Grid container spacing={3}>
           {portfolios.map((portfolio) => (
             <Grid key={portfolio.id} container item xs={6} sm={3} md={3} xl={3}>
@@ -27,7 +44,7 @@ export default function Portfolio({ portfolios }) {
                     title="Contemplative Reptile"
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography className={classes.cardTitle} gutterBottom component="h1">
                       {portfolio.appNome}
                     </Typography>
 

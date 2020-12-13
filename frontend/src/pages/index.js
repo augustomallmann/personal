@@ -1,11 +1,12 @@
 import Layout from '../components/Layout';
 import { fetchAPI } from '../../lib/api';
 import Portfolio from '../components/Portfolio';
+import Hero from '../components/Hero'
 
 const Home = ({ categories, portfolios }) => (
   <>
     <Layout categories={categories}>
-      <h1>Olá mundo</h1>
+      <Hero/>
       <Portfolio portfolios={portfolios} />
     </Layout>
   </>
