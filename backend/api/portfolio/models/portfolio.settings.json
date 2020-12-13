@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolios",
+  "info": {
+    "name": "Portfolio",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "appNome": {
+      "type": "string"
+    },
+    "appDescription": {
+      "type": "string"
+    },
+    "appImage": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "githubUrl": {
+      "type": "string",
+      "regex": "^(?:http(s)?:\\/\\/)?[\\w.-]+(?:\\.[\\w\\.-]+)+[\\w\\-\\._~:/?#[\\]@!\\$&'\\(\\)\\*\\+,;=.]+$"
+    },
+    "liveUrl": {
+      "type": "string",
+      "regex": "^(?:http(s)?:\\/\\/)?[\\w.-]+(?:\\.[\\w\\.-]+)+[\\w\\-\\._~:/?#[\\]@!\\$&'\\(\\)\\*\\+,;=.]+$"
+    },
+    "technology": {
+      "model": "technology"
+    },
+    "technologies": {
+      "via": "portfolio",
+      "collection": "technology"
+    }
+  }
+}
