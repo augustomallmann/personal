@@ -604,34 +604,6 @@
           "liveUrl": {
             "type": "string"
           },
-          "technology": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "portfolio": {
-                "type": "string"
-              },
-              "fontAwesomeIcon": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "technologies": {
             "type": "array",
             "items": {
@@ -648,7 +620,7 @@
                 "portfolio": {
                   "type": "string"
                 },
-                "fontAwesomeIcon": {
+                "techImage": {
                   "type": "string"
                 },
                 "published_at": {
@@ -681,9 +653,6 @@
             "type": "string"
           },
           "liveUrl": {
-            "type": "string"
-          },
-          "technology": {
             "type": "string"
           },
           "technologies": {

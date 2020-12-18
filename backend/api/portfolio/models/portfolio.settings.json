@@ -36,12 +36,9 @@
       "type": "string",
       "regex": "^(?:http(s)?:\\/\\/)?[\\w.-]+(?:\\.[\\w\\.-]+)+[\\w\\-\\._~:/?#[\\]@!\\$&'\\(\\)\\*\\+,;=.]+$"
     },
-    "technology": {
-      "model": "technology"
-    },
     "technologies": {
-      "via": "portfolio",
-      "collection": "technology"
+      "collection": "technology",
+      "via": "portfolio"
     }
   }
 }
