@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+
 // strapi api
 import App from 'next/app';
 import { fetchAPI } from '../api/Api';
+
+import '../styles/global.scss';
 
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});

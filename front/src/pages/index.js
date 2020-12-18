@@ -23,11 +23,7 @@ export default function Home({
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Layout
-        categories={categories}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      >
+      <Layout darkMode={darkMode} setDarkMode={setDarkMode}>
         <Hero />
         <Portfolio portfolios={portfolios} />
         <Articles articles={articles} />

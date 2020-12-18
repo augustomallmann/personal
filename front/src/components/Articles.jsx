@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
   articlesH1: {
@@ -113,26 +114,30 @@ export default function Articles({ articles }) {
           <Grid item xs={6} style={{ padding: '0 12px 0' }}>
             <Grid style={{ height: '100%' }}>
               {articles.slice(0, 1).map((article) => (
-                <Card
-                  className={classes.card}
-                  variant="outlined"
-                  style={{ height: '100%' }}
-                  key={article.id}
-                >
-                  <CardMedia
-                    className={classes.media}
-                    image={`http://localhost:1337${article.image.formats.medium.url}`}
-                    title="Contemplative Reptile"
-                  />
-                  <CardContent className={classes.content}>
-                    <Typography gutterBottom color="" component="h2">
-                      {article.title}
-                    </Typography>
-                    <Typography variant="body2" component="p">
-                      {article.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
+                <Link href={`/${article.slug}`}>
+                  <a>
+                    <Card
+                      className={classes.card}
+                      variant="outlined"
+                      style={{ height: '100%' }}
+                      key={article.id}
+                    >
+                      <CardMedia
+                        className={classes.media}
+                        image={`http://localhost:1337${article.image.formats.medium.url}`}
+                        title="Contemplative Reptile"
+                      />
+                      <CardContent className={classes.content}>
+                        <Typography gutterBottom color="" component="h2">
+                          {article.title}
+                        </Typography>
+                        <Typography variant="body2" component="p">
+                          {article.description}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </a>
+                </Link>
               ))}
             </Grid>
           </Grid>
@@ -140,20 +145,28 @@ export default function Articles({ articles }) {
           <Grid item xs={6}>
             <Grid container spacing={3}>
               {articles.slice(1, 5).map((article) => (
-                <Card className={classes.cardSecondColumn} key={article.id}>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {article.title}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {article.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
+                <Link href={`/${article.slug}`}>
+                  <a
+                    href
+                    className={classes.cardSecondColumn}
+                    style={{ textDecoration: 'none', cursor: 'pointer' }}
+                  >
+                    <Card key={article.id}>
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {article.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          {article.description}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </a>
+                </Link>
               ))}
             </Grid>
           </Grid>

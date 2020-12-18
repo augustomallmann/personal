@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Switch from '@material-ui/core/Switch';
 import CodeIcon from '@material-ui/icons/Code';
 import { List, ListItem, ListItemText } from '@material-ui/core';
+import Link from 'next/link';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '400',
     textTransform: 'uppercase',
     letterSpacing: '2px',
+    color: '#fff',
   },
   icon: {
     marginRight: theme.spacing(1),
@@ -69,10 +71,11 @@ export default function Header({ darkMode, setDarkMode }) {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.customToolbar}>
           <CodeIcon color="secondary" fontSize="large" />
-          <Typography variant="h6" className={classes.title}>
-            Mallmann.dev
-          </Typography>
-
+          <Link href="/">
+            <a className={classes.title}>
+              <Typography variant="h6">Mallmann.dev</Typography>
+            </a>
+          </Link>
           <List
             component="nav"
             aria-labelledby="main navigation"

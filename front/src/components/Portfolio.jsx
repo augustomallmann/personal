@@ -83,7 +83,7 @@ export default function Portfolio({ portfolios }) {
         </Grid>
         <Grid container spacing={3}>
           {portfolios.slice(0, 4).map((portfolio) => (
-            <Grid key="portfolio.id" item lg={3}>
+            <Grid key="portfolio.id" item xs={12} sm={6} md={3} lg={3}>
               <Card className={classes.card} style={{ height: '100%' }}>
                 <CardMedia
                   className={classes.media}

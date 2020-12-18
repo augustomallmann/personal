@@ -12,6 +12,8 @@ import { fetchAPI } from '../api/Api';
 import Layout from '../components/Layout';
 import { getStrapiMedia } from '../api/Media';
 
+export const config = { amp: 'hybrid' };
+
 const useStyles = makeStyles((theme) => ({
   singleArticleWrap: {
     padding: theme.spacing(8, 0, 3),
@@ -26,13 +28,15 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(8),
   },
   singleArticleH1: {
-    fontSize: '36px',
+    fontSize: '2rem',
     lineHeight: '42px',
-    fontWeight: 400,
+    fontWeight: 'bold',
+    letterSpacing: '1px',
   },
   articleContent: {
     fontSize: '1rem',
     lineHeight: '1.5rem',
+    letterSpacing: '1px',
   },
   divider: {
     margin: theme.spacing(3, 0, 3),
