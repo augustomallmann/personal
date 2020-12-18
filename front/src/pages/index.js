@@ -1,13 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { fetchAPI } from '../api/Api';
-
+import Seo from '../components/Seo';
 import Hero from '../components/Hero';
 import Portfolio from '../components/Portfolio';
 import Articles from '../components/Articles';
 import Layout from '../components/Layout';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Home({
   darkMode,
   setDarkMode,
-  categories,
+  homepage,
   portfolios,
   articles,
 }) {
@@ -24,6 +24,7 @@ export default function Home({
   return (
     <div className={classes.root}>
       <Layout darkMode={darkMode} setDarkMode={setDarkMode}>
+        <Seo seo={homepage.seo} />
         <Hero />
         <Portfolio portfolios={portfolios} />
         <Articles articles={articles} />
@@ -33,7 +34,6 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-  // Run API calls in parallel
   const [articles, categories, homepage, portfolios] = await Promise.all([
     fetchAPI('/articles?status=published'),
     fetchAPI('/categories'),

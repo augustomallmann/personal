@@ -81,7 +81,7 @@ export default function Header({ darkMode, setDarkMode }) {
             aria-labelledby="main navigation"
             className={classes.navDisplayFlex}
           >
-            {navLinks.map(({ title, path, icon }) => (
+            {navLinks.map(({ title, path }) => (
               <a href={path} key={title} className={classes.linkText}>
                 <ListItem button>
                   <ListItemText primary={title} />

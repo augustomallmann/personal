@@ -11,6 +11,7 @@ import Divider from '@material-ui/core/Divider';
 import { fetchAPI } from '../api/Api';
 import Layout from '../components/Layout';
 import { getStrapiMedia } from '../api/Media';
+import Seo from '../components/Seo';
 
 export const config = { amp: 'hybrid' };
 
@@ -44,6 +45,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SingleArticle = ({ article, categories, setDarkMode, darkMode }) => {
+  const seo = {
+    metaTitle: article.title,
+    metaDescription: article.description,
+    shareImage: article.image,
+    article: true,
+  };
   const classes = useStyles();
   const imageUrl = getStrapiMedia(article.image);
   const router = useRouter();
@@ -55,6 +62,8 @@ const SingleArticle = ({ article, categories, setDarkMode, darkMode }) => {
         setDarkMode={setDarkMode}
         darkMode={darkMode}
       >
+        <Seo seo={seo} />
+
         <Paper square className={classes.singleArticleWrap}>
           <Box
             className={classes.singleBanner}
