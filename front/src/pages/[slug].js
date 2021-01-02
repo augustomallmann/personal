@@ -13,8 +13,6 @@ import Layout from '../components/Layout';
 import { getStrapiMedia } from '../api/Media';
 import Seo from '../components/Seo';
 
-export const config = { amp: 'hybrid' };
-
 const useStyles = makeStyles((theme) => ({
   singleArticleWrap: {
     padding: theme.spacing(8, 0, 3),
